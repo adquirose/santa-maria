@@ -3,7 +3,8 @@ import { Navigate } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
 const RutaPrivada = ({ children }) => {
-    const {user} = useAuth()
+    const { user } = useAuth()
+    console.log(user)
     if(user){
         return(children)
     }else{

@@ -102,10 +102,10 @@ const Contacto = () => {
             </div>
         `
         const info = {
-            to:'puertowerner@gmail.com"',
+            to:'sanalfoso801@gmail.com',
             replyTo: email,
             subject:'Formulario Contacto',
-            text:'Puerto Werner',
+            text:'Santa María',
             html: msj,
             nombre: nombre,
             email: email,
@@ -148,9 +148,12 @@ const Contacto = () => {
                         <Button disabled={isDisabled} type="submit"> {isLoading ? 'Enviando...' : 'Enviar'}</Button>
                     </InputLabel>
                 </Form>
-                <div onClick={() => window.open('tel:+56978248529')} style={{display:'flex', alignItems:'center', cursor:'pointer'}}>
+                <div onClick={() => window.open('tel:+56923706531')} style={{display:'flex', alignItems:'center', cursor:'pointer'}}>
                     <MobileContact width="42" height="42" strokewidth="2"/>
-                    +569 7824 8529
+                    <div style={{paddingLeft:12}}>
+                        <p style={{margin:0}}>Roberto Valderrama Astorga</p>
+                        <p style={{margin:0}}>+56 9 2370 6531</p>
+                    </div>
                 </div>
             </ProyectoContainer>
             <Alerta alerta={alerta} setAlerta={setAlerta}/> 

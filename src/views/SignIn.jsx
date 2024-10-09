@@ -130,7 +130,8 @@ const SignIn = () => {
     const { email, password } = data 
     return(
         <Container>
-            <Logo/>
+            {/* <Logo/> */}
+            <h2 style={{fontWeight:'normal', color:'white'}}>Santa María</h2>
             <Formulario onSubmit={handleOnSubmit}>
                 
                 <Input 

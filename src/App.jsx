@@ -5,7 +5,7 @@ import Krpano from './components/Krpano'
 import styled from 'styled-components'
 import Proyecto from './components/Proyecto'
 import Ubicacion from './components/Ubicacion'
-import ClubNautico from './components/ClubNautico'
+import Entorno from './components/Entorno'
 import Galeria from './components/Galeria'
 import Contacto from './components/Contacto'
 
@@ -40,8 +40,8 @@ function App() {
         return <Galeria estado={estado} setEstado={setEstado}/>
       case "contacto":
         return <Contacto estado={estado} setEstado={setEstado}/>
-      case "club-nautico":
-        return <ClubNautico estado={estado} setEstado={setEstado}/>
+      case "entorno":
+        return <Entorno estado={estado} setEstado={setEstado}/>
       default:
         break;
     }

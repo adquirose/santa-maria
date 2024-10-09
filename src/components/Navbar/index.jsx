@@ -101,7 +101,7 @@ const Navbar = ({handleClick}) => {
                     <Item onClick={() => handleClick('ubicacion')}>Ubicación</Item>
                     <Item onClick={() => handleClick('galeria')}>Galeria</Item>
                     <Item onClick={() => handleClick('contacto')}>Contacto</Item>
-                    <Item onClick={() => handleClick('club-nautico')}>Club Nautico</Item>
+                    <Item onClick={() => handleClick('entorno')}>Entorno</Item>
                 </List>
             </ContainerNav>
     

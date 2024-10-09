@@ -28,25 +28,36 @@ export const ProyectoContainer = styled.div`
 `
 const Parrafo = styled.p`
     padding: 0 0.75rem;
+    text-align:justify;
+`
+const H2 = styled.h2`
+    font-weight:normal;
 `
 const Proyecto = () => {
     return(
         <ProyectoContainer>
-            <img src={Logo} alt="logo-proyecto" style={{width:'320px', }}/>
+            {/* <img src={Logo} alt="logo-proyecto" style={{width:'320px', }}/> */}
+            <H2>Santa María</H2>
             <Parrafo>	
-                Puerto Werner está ubicado a 10 minutos al Norte de Puerto Varas, a orillas de
-            una de las lagunas más hermosas y grandes del Sur de Chile, La Pichilaguna. <br/><br/>
-            Consta de solo una etapa de 46 parcelas, desde 5.000m2 aprox.
-            Cuenta con amplios caminos pavimentados e iluminados, energía eléctrica
-            subterránea, agua potable de pozo profundo, fibra óptica, parque, mirador y Club
-            Náutico.<br/><br/>
-            Su conectividad hace de este loteo, un lugar privilegiado a solo 1 km de la
-            Carretera 5 Sur, conectando a ciudades como Frutillar, Puerto Varas y Puerto
-            Montt, así como también hacia Aeropuerto El Tepual.<br/><br/>
-            Todo el entorno de este loteo es de gran belleza y tranquilidad, la vista a los
-            Volcanes Osorno, Calbuco y Puntiagudo son uno más de los atributos de esta
-            parcelación.<br/><br/>
-            Valor:  UF 3.900 .- sin comisión.
+                El Proyecto Santa María, ubicado en Coronel de Maule, ofrece 28 parcelas de
+                aproximadamente media hectárea cada una. Estas parcelas están situadas en un 
+                entorno natural privilegiado, cerca de un estero, con hermosas vistas a los 
+                bosques circundantes y viñedos cercanos. 
+                La combinación de paisajes rurales y la proximidad a áreas naturales hace 
+                de este proyecto una excelente oportunidad para quienes buscan tranquilidad 
+                y contacto directo con la naturaleza.
+
+                Características del proyecto:
+                <ul>
+                    <li> Servicios incluidos: Luz, agua potable y alcantarillado en cada parcela.</li>
+                    <li> Infraestructura: Caminos internos habilitados para garantizar un fácil acceso.</li>
+                    <li> Opciones de pago: Se aceptarán vehículos, criptomonedas y efectivo como parte del pago, lo que ofrece flexibilidad para los compradores.</li>
+                </ul>
+                
+                La cercanía a playas como Cobquecura (50 minutos) y Playa Buchupureo (1 hora), 
+                además de la ciudad de Chillán (1 hora 25 minutos), brinda accesibilidad tanto a 
+                zonas turísticas como a servicios urbanos importantes. Este proyecto es ideal para vivir, 
+                vacacionar o como inversión, rodeado de naturaleza y vistas excepcionales.
             </Parrafo>
         </ProyectoContainer>
     )
