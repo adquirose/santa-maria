@@ -29,13 +29,13 @@ const FichaContainer = styled.div`
     -moz-box-shadow: 17px 20px 36px -15px rgba(0,0,0,0.75);
     box-shadow: 17px 20px 36px -15px rgba(0,0,0,0.75);
     width:340px;
-    height:480px;
+    height:310px;
     background-color:rgba(255,255,255,0.95);
     border-radius:5px;
     display:flex;
     flex-direction:column;
     position:relative;
-    top:60px;
+    top:calc(50vh - 160px);
     padding:0.5rem;
     left:5px;
     animation:${slideIn} 1s;
@@ -95,12 +95,12 @@ const ContainerText = styled.div`
     padding:0 1rem;
 `
 const linkWs = id => {
-    return `https://wa.me/56978248529?text=Hola%20Estoy%20interesado%20en%20el%20lote%20${id}`
+    return `https://wa.me/56923706531?text=Hola%20Estoy%20interesado%20en%20el%20lote%20${id}`
 }
 const Ficha = ({ dataLote = {}, setVisibleFicha, visibleFicha }) => {
     return(
         <FichaContainer $visibleFicha={visibleFicha}>
-            <Image src={`images/fichas/foto${dataLote.html}.jpg`}/>
+            {/* <Image src={`images/fichas/foto${dataLote.html}.jpg`}/> */}
             <ContainerTitulo>
                 <Titulo>Lote {dataLote.nombreLote}</Titulo>
                 <Button background="none" onClick={() => window.open(linkWs(dataLote.html),'blank')}>
