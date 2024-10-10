@@ -70,12 +70,12 @@ const SelectEstados = ({ data, setData }) => {
         {id: 'disponible', texto: 'Disponible'},
         {id: 'vendido', texto: 'Vendido'},
         {id: 'reservado', texto: 'Reservado'},
-        {id: 'no disponible', texto: 'No Disponible'},
+        {id: 'nodisponible', texto: 'NoDisponible'},
     ]
     const handleOnClick = (event) => {
         setData({...data, estado: event.currentTarget.dataset.valor})
     }
-  
+    
     return(
         <ContenedorSelect onClick={() => setMostrarSelect(!mostrarSelect)}>
             <OpcionSeleccionada>

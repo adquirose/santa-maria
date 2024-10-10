@@ -98,6 +98,10 @@ const linkWs = id => {
     return `https://wa.me/56923706531?text=Hola%20Estoy%20interesado%20en%20el%20lote%20${id}`
 }
 const Ficha = ({ dataLote = {}, setVisibleFicha, visibleFicha }) => {
+    const formatter = new Intl.NumberFormat('de-DE', {});
+    let valor = formatter.format(dataLote.valor)
+    let superficie = formatter.format(dataLote.superficie)
+    const estado = dataLote.estado == 'nodisponible' ? 'No disponible' : dataLote.estado
     return(
         <FichaContainer $visibleFicha={visibleFicha}>
             {/* <Image src={`images/fichas/foto${dataLote.html}.jpg`}/> */}
@@ -108,14 +112,9 @@ const Ficha = ({ dataLote = {}, setVisibleFicha, visibleFicha }) => {
                 </Button>
             </ContainerTitulo>
             <ContainerText>
-                <P>Estado: {dataLote.estado}</P>
-                <P>Valor: {dataLote.valor} UF</P>
-                <P>Superficie: {dataLote.superficie} M2</P>
-                <P>Servidumbre: {dataLote.servidumbre} M2</P>
-                <P>Caracteristicas: </P>
-                <P>
-                    {dataLote.caracteristica}
-                </P>
+                <P>Estado: { estado }</P>
+                <P>Valor: $ { valor }</P>
+                <P>Superficie: { superficie } M2</P>
             </ContainerText>
             <ButtonGroup>
                 <Button type="Button" onClick={() => setVisibleFicha(!visibleFicha)}>CONTINUAR</Button>

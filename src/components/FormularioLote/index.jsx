@@ -16,6 +16,7 @@ const FormContainer = styled.div`
     max-width:360px;
     width: 100%;
     max-height: 620px;
+    min-height:310px;
     overflow-y:auto;
     box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,.05);
     border-radius: 0.625rem;
@@ -54,7 +55,7 @@ const Input = styled.input`
     background: ${theme.grisClaro};
     cursor: pointer;
     min-width:40px;
-    max-width:220px;
+    max-width:240px;
     width:100%;
     border-radius: 0.25rem;
     border: none;
@@ -119,8 +120,6 @@ const INITIAL_STATE_LOTE = {
     nombreLote:'',
     valor:'',
     superficie:'',
-    servidumbre:'',
-    caracteristica:'',
     fecha: new Date()
 }
 const INITIAL_STATE_ALERTA = {
@@ -156,8 +155,8 @@ const FormularioLote = ({lote}) => {
     }
     const handleSubmit = event => {
         event.preventDefault()
-        const { fecha, valor, estado, nombreLote, superficie, servidumbre, caracteristica } = data 
-        const newLote = { valor, estado, nombreLote, superficie, servidumbre, caracteristica, fecha: getUnixTime(fecha), uid:user.uid }
+        const { fecha, valor, estado, nombreLote, superficie } = data 
+        const newLote = { valor, estado, nombreLote, superficie, fecha: getUnixTime(fecha), uid:user.uid }
         if(lote){
             editarLote({
                 ...data,
@@ -199,14 +198,7 @@ const FormularioLote = ({lote}) => {
                         <Label>Superficie M2</Label>
                         <Input type="text" name="superficie" value={data.superficie} onChange={handleChange} placeholder="Superficie M2"/>
                     </InputLabel>
-                    <InputLabel>
-                        <Label>Servidumbre M2</Label>
-                        <Input type="text" name="servidumbre" value={data.servidumbre} onChange={handleChange} placeholder="Servidumbre M2"/>
-                    </InputLabel>
-                    <div>
-                        <Label>Caracteristicas</Label>
-                        <TextArea type="text" name="caracteristica" value={data.caracteristica} onChange={handleChange} placeholder="Caracteristica"/>
-                    </div>
+                    
                     <InputLabel>
                         <Button type="submit">{lote ? 'Actualizar': 'Crear Lote'}</Button>
                     </InputLabel>
