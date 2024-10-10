@@ -41,15 +41,13 @@ const FichaContainer = styled.div`
     animation:${slideIn} 1s;
     position:absolute;
     z-index:5;
-    // background:red;
 `
 const Button = styled.button`
     border:none;
     padding:0.5rem 1rem;
     max-width:120px;
     border-radius:5px;
-    background:#5B69E2;
-    background:${props => props.background ? props.background :'#5B69E2'};
+    background:${props => props.$background ? props.$background :'#5B69E2'};
     color:${props => props.color ? props.color: 'white'};
     cursor:pointer;
     font-size:0.75rem;
@@ -99,15 +97,15 @@ const linkWs = id => {
 }
 const Ficha = ({ dataLote = {}, setVisibleFicha, visibleFicha }) => {
     const formatter = new Intl.NumberFormat('de-DE', {});
-    let valor = formatter.format(dataLote.valor)
-    let superficie = formatter.format(dataLote.superficie)
+    const valor = formatter.format(dataLote.valor)
+    const superficie = formatter.format(dataLote.superficie)
     const estado = dataLote.estado == 'nodisponible' ? 'No disponible' : dataLote.estado
     return(
         <FichaContainer $visibleFicha={visibleFicha}>
             {/* <Image src={`images/fichas/foto${dataLote.html}.jpg`}/> */}
             <ContainerTitulo>
                 <Titulo>Lote {dataLote.nombreLote}</Titulo>
-                <Button background="none" onClick={() => window.open(linkWs(dataLote.html),'blank')}>
+                <Button $background="none" onClick={() => window.open(linkWs(dataLote.html),'blank')}>
                     <LogoWhatsapp fill="black" width="36" height="36"/>
                 </Button>
             </ContainerTitulo>
@@ -115,6 +113,7 @@ const Ficha = ({ dataLote = {}, setVisibleFicha, visibleFicha }) => {
                 <P>Estado: { estado }</P>
                 <P>Valor: $ { valor }</P>
                 <P>Superficie: { superficie } M2</P>
+                <P>{dataLote.caracteristica}</P>
             </ContainerText>
             <ButtonGroup>
                 <Button type="Button" onClick={() => setVisibleFicha(!visibleFicha)}>CONTINUAR</Button>
