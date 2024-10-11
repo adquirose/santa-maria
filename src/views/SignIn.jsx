@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase/firebaseConfig'
 import { Link } from 'react-router-dom';
-import ImgLogo from '../assets/logo2.png'
+import ImgLogo from '../assets/logo.png'
 
 import Alerta from '../components/Alerta'
 import theme from '../constants';
@@ -49,7 +49,7 @@ export const Input = styled.input`
 `;
 const Logo = styled.img`
     width:100%;
-    max-width:220px;
+    max-width:250px;
     padding-bottom:36px;
 `
 Logo.defaultProps={
@@ -130,8 +130,7 @@ const SignIn = () => {
     const { email, password } = data 
     return(
         <Container>
-            {/* <Logo/> */}
-            <h2 style={{fontWeight:'normal', color:'white'}}>Santa María</h2>
+            <Logo/>
             <Formulario onSubmit={handleOnSubmit}>
                 
                 <Input 
