@@ -5,7 +5,7 @@ import { ProyectoContainer } from "../Proyecto";
 import Alerta from "../Alerta";
 import styled from "styled-components";
 import theme from "../../constants";
-import { MobileContact } from '../Icons'
+import { MobileContact, Email } from '../Icons'
 
 const INITIAL_STATE = {
     nombre:'',
@@ -79,8 +79,13 @@ const Button = styled.button`
     transition: .5s ease all;
     &:hover{
         background-color:rgba(blue,0.25);
-    }
-    
+    } 
+`
+const Anchor = styled.a`
+    text-decoration:none;
+    color:black;
+    padding-top:6px;
+
 `
 const Contacto = () => {
     const [data, setData] = useState({...INITIAL_STATE})
@@ -102,7 +107,7 @@ const Contacto = () => {
             </div>
         `
         const info = {
-            to:'sanalfoso801@gmail.com',
+            to:'contacto@proyectosantamaria.com, roberto.valderrama@proyectosantamaria.com, felipe.galdames@proyectosantamaria.com',
             replyTo: email,
             subject:'Formulario Contacto',
             text:'Santa María',
@@ -148,12 +153,20 @@ const Contacto = () => {
                         <Button disabled={isDisabled} type="submit"> {isLoading ? 'Enviando...' : 'Enviar'}</Button>
                     </InputLabel>
                 </Form>
-                <div onClick={() => window.open('tel:+56923706531')} style={{display:'flex', alignItems:'center', cursor:'pointer'}}>
-                    <MobileContact width="42" height="42" strokewidth="2"/>
-                    <div style={{paddingLeft:12}}>
-                        <p style={{margin:0}}>Roberto Valderrama Astorga</p>
-                        <p style={{margin:0}}>+56 9 2370 6531</p>
+                <div>
+                    <div onClick={() => window.open('tel:+56923706531')} style={{display:'flex', alignItems:'center', cursor:'pointer'}}>
+                        <MobileContact width="32" height="32" strokewidth="2"/>
+                        <div style={{paddingLeft:12}}>
+                            <p style={{margin:0}}>Roberto Valderrama Astorga</p>
+                            <p style={{margin:0}}>+56 9 2370 6531</p>
+                        </div>
                     </div>
+                    <Anchor  href="mailto:contacto@proyectosantamaria.com" style={{display:'flex', alignItems:'center', cursor:'pointer'}}>
+                        <Email width="32" height="32" strokewidth="2"/>
+                        <div style={{paddingLeft:12}}>
+                            <p style={{margin:0}}>contacto@proyectosantamaria.com</p>
+                        </div>
+                    </Anchor>
                 </div>
             </ProyectoContainer>
             <Alerta alerta={alerta} setAlerta={setAlerta}/> 

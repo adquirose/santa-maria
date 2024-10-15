@@ -6,7 +6,7 @@ export const ProyectoContainer = styled.div`
     min-width:340px;
     width:90%;
     height:100%;
-    max-height:520px;
+    max-height:560px;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     z-index:6;
@@ -19,7 +19,9 @@ export const ProyectoContainer = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    padding-top:0;
     @media(max-width:420px){
         padding:0.75rem;
         max-height:480px;
@@ -29,15 +31,12 @@ export const ProyectoContainer = styled.div`
 const Parrafo = styled.p`
     padding: 0 0.75rem;
     text-align:justify;
-`
-const H2 = styled.h2`
-    font-weight:normal;
+    margin:0;
 `
 const Proyecto = () => {
     return(
         <ProyectoContainer>
-            {/* <img src={Logo} alt="logo-proyecto" style={{width:'320px', }}/> */}
-            <H2>Santa María</H2>
+            <img src={Logo} alt="logo-proyecto" style={{width:'220px'}}/>
             <Parrafo>	
                 El Proyecto Santa María, ubicado en Coronel de Maule, ofrece 28 parcelas de
                 aproximadamente media hectárea cada una. Estas parcelas están situadas en un 
@@ -46,12 +45,14 @@ const Proyecto = () => {
                 La combinación de paisajes rurales y la proximidad a áreas naturales hace 
                 de este proyecto una excelente oportunidad para quienes buscan tranquilidad 
                 y contacto directo con la naturaleza.
-
-                Características del proyecto:
+                <br/>
+                <br/>
+                Urbanización:
                 <ul>
-                    <li> Servicios incluidos: Luz, agua potable y alcantarillado en cada parcela.</li>
-                    <li> Infraestructura: Caminos internos habilitados para garantizar un fácil acceso.</li>
-                    <li> Opciones de pago: Se aceptarán vehículos, criptomonedas y efectivo como parte del pago, lo que ofrece flexibilidad para los compradores.</li>
+                    <li>Suministro  de energía eléctrica</li>
+                    <li>Tratamiento de aguas servidas</li>
+                    <li>Suministro de agua residencial</li>
+                    <li>Caminos y portón de entrada</li>
                 </ul>
                 
                 La cercanía a playas como Cobquecura (50 minutos) y Playa Buchupureo (1 hora), 
@@ -59,6 +60,7 @@ const Proyecto = () => {
                 zonas turísticas como a servicios urbanos importantes. Este proyecto es ideal para vivir, 
                 vacacionar o como inversión, rodeado de naturaleza y vistas excepcionales.
             </Parrafo>
+            <p style={{textAlign:'center', fontSize:'1.2rem', fontWeight:'bold'}}>Crédito directo con un 30% de pie y un plazo máximo de hasta 6 meses. </p>
         </ProyectoContainer>
     )
 }
